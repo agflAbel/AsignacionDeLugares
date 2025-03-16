@@ -1,0 +1,21 @@
+body{
+    background-color: rgba(247,237,229,255);
+}
+div{
+    padding: 0.5%;
+}
+.enc{
+    width: 100%;
+}
+.titulo{
+    color: rgb(0, 0, 94);
+    font-family: 'Jacquard 24';
+    text-align: center;
+    margin: 3%;
+}
+footer{
+    background-color: rgb(0, 0, 94);
+    height: 100px;
+    padding: 3%;
+    color: rgba(247,237,229,255);
+}
