@@ -2,6 +2,7 @@
 include('asignacion.class.php');
 $action=(isset($_GET['action']))?$_GET['action']:null;
 $a = new Asigna;
+
 if($action):
     $lugares=$a->getArray($_POST['lugares']);
     $grupos=$a->getArray($_POST['grupos']);
@@ -36,18 +37,18 @@ endif;
                 <div class="container text-center">
                     <div class="row">
                         <div class="col">
-                            Lista de lugares
+                            Lista de lugares y hora
                         </div>
                         <div class="col">
-                            Lista de Grupos
+                            Lista de Grupos y/o Estudiantes
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <textarea class="form-control" name="lugares" id="lugares" rows="4"><?php echo(isset($final))?$_POST['lugares']:'' ?></textarea>
+                            <textarea class="form-control" name="lugares" id="lugares" rows="10"><?php echo(isset($final))?$_POST['lugares']:'' ?></textarea>
                         </div>
                         <div class="col">
-                            <textarea class="form-control" name="grupos" id="lugares" rows="4"><?php echo(isset($final))?$_POST['grupos']:'' ?></textarea>
+                            <textarea class="form-control" name="grupos" id="lugares" rows="10"><?php echo(isset($final))?$_POST['grupos']:'' ?></textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -62,13 +63,14 @@ endif;
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Grupo</th>
-                    <th scope="col">Lugar</th>
+                    <th scope="col">Grupo y/o alumnos</th>
+                    <th scope="col">Lugar y hora</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $i=1;
+                    if($action):
                     foreach($final as $asig):
                     ?>
                     <tr>
@@ -76,7 +78,7 @@ endif;
                     <td><?php print $asig[0] ?></td>
                     <td><?php print $asig[1] ?></td>
                     </tr>
-                    <?php $i++; endforeach;?>
+                    <?php $i++; endforeach; endif;?>
                 </tbody>
             </table>
         </div>
